@@ -130,6 +130,7 @@ function randomBackgroundImageSet() {
   // If no image path or list is set, do nothing
   if (imagePath === "" || imageNameList.length === 0) {
     console.log("no background image path or list found.");
+    classHandler(`body`).style.removeProperty("background-image");
     return null;
   }
   // Select a random image from the list
