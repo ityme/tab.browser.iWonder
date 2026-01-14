@@ -6,10 +6,11 @@
  */
 
 // Default configuration for the application
-const DefaultConfig = {
+const DEFAULT_CONFIG = {
   currentEngine: "baidu", // Default search engine
   settingsMode: "no", // 'yes' if in settings mode, 'no' otherwise
   isSearchContainerVisible: "yes", // 'yes' if the search container is visible, 'no' otherwise
+  
 };
 
 // console.log(config.currentEngine);
@@ -62,7 +63,7 @@ function classHandler(classselector, operation) {
 
 /**
  * Retrieves an item from localStorage and parses it as JSON.
- * If the item doesn't exist or there's an error, it returns a default value from DefaultConfig.
+ * If the item doesn't exist or there's an error, it returns a default value from DEFAULT_CONFIG.
  * @param {string} key - The key of the item to retrieve.
  * @returns {any} The retrieved value or the default value.
  */
@@ -75,7 +76,7 @@ function dbGet(key) {
     console.error("Error getting item from localStorage:", error);
   }
   // Return the value or the default value if value is null/undefined
-  return value || DefaultConfig[key];
+  return value || DEFAULT_CONFIG[key];
 }
 
 /**
