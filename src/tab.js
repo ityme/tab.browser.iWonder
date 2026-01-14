@@ -10,7 +10,6 @@ const DEFAULT_CONFIG = {
   currentEngine: "baidu", // Default search engine
   settingsMode: "no", // 'yes' if in settings mode, 'no' otherwise
   isSearchContainerVisible: "yes", // 'yes' if the search container is visible, 'no' otherwise
-  
 };
 
 // console.log(config.currentEngine);
@@ -130,7 +129,7 @@ function randomBackgroundImageSet() {
   let imageNameList = dbGet("imageNameList") || [];
   // If no image path or list is set, do nothing
   if (imagePath === "" || imageNameList.length === 0) {
-    classHandler(`body`).style.backgroundImage = "";
+    console.log("no background image path or list found.");
     return null;
   }
   // Select a random image from the list
