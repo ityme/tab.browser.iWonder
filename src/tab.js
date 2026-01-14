@@ -10,6 +10,20 @@ const DEFAULT_CONFIG = {
   currentEngine: "baidu", // Default search engine
   settingsMode: "no", // 'yes' if in settings mode, 'no' otherwise
   isSearchContainerVisible: "yes", // 'yes' if the search container is visible, 'no' otherwise
+  imagePath: "./static/image/", // Path to the background image folder
+  imageNameList: [
+    "Girl in the forest-without-sign.png",
+    "三体智子高清4k动漫壁纸_彼岸图网.jpg",
+    "动漫女孩 侧脸 光 4k壁纸_彼岸图网.jpg",
+    "地下城与勇士 女孩 小提琴 公园 汽车4k动漫壁纸_彼岸图网.jpg",
+    "小兰 动漫人物 4k壁纸 3840_2160_彼岸图网.jpg",
+    "小兰 落泪 伤心难过 4K动漫壁纸_彼岸图网.jpg",
+    "帅气短发美少女 汽车 动漫风景 3440x1440带鱼屏壁纸_彼岸图网.jpg",
+    "敦煌风美女 绘画 唯美 高清4k动漫壁纸_彼岸图网.jpg",
+    "短发女孩 蓝玫瑰 4K动漫壁纸 3840x2160_彼岸图网.jpg",
+    "艾瑞丝盖恩斯巴勒 最终幻想美女4k壁纸_彼岸图网.jpg",
+    "黑白风动漫人物女4k壁纸3840x2160_彼岸图网.jpg",
+  ], // List of image file names in the background image folder
 };
 
 // console.log(config.currentEngine);
@@ -138,7 +152,7 @@ function randomBackgroundImageSet() {
   console.log("current background image:", path);
   try {
     // Set the background image of the body
-    classHandler(`body`).style.backgroundImage = `url("file:///${path}")`;
+    classHandler(`body`).style.backgroundImage = `url("${path}")`;
   } catch (error) {
     console.error("Error setting background image:", error);
     alert("Cannot load background image, please check the path settings.");
