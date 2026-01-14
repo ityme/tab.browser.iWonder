@@ -6,7 +6,7 @@
  */
 
 // Default configuration for the application
-const DefaultConfig = {
+const DEFAULT_CONFIG = {
   currentEngine: "baidu", // Default search engine
   settingsMode: "no", // 'yes' if in settings mode, 'no' otherwise
   isSearchContainerVisible: "yes", // 'yes' if the search container is visible, 'no' otherwise
@@ -62,7 +62,7 @@ function classHandler(classselector, operation) {
 
 /**
  * Retrieves an item from localStorage and parses it as JSON.
- * If the item doesn't exist or there's an error, it returns a default value from DefaultConfig.
+ * If the item doesn't exist or there's an error, it returns a default value from DEFAULT_CONFIG.
  * @param {string} key - The key of the item to retrieve.
  * @returns {any} The retrieved value or the default value.
  */
@@ -75,7 +75,7 @@ function dbGet(key) {
     console.error("Error getting item from localStorage:", error);
   }
   // Return the value or the default value if value is null/undefined
-  return value || DefaultConfig[key];
+  return value || DEFAULT_CONFIG[key];
 }
 
 /**
@@ -129,6 +129,7 @@ function randomBackgroundImageSet() {
   let imageNameList = dbGet("imageNameList") || [];
   // If no image path or list is set, do nothing
   if (imagePath === "" || imageNameList.length === 0) {
+    console.log("no background image path or list found.");
     return null;
   }
   // Select a random image from the list
@@ -137,7 +138,7 @@ function randomBackgroundImageSet() {
   console.log("current background image:", path);
   try {
     // Set the background image of the body
-    classHandler(`body`).style.backgroundImage = `url('file:///${path}')`;
+    classHandler(`body`).style.backgroundImage = `url("file:///${path}")`;
   } catch (error) {
     console.error("Error setting background image:", error);
     alert("Cannot load background image, please check the path settings.");
@@ -151,6 +152,7 @@ function settingsModeEnter() {
   dbSet("settingsMode", "yes");
   classHandler(`.confirm-button`, "show");
   classHandler(`.cancel-button`, "show");
+  classHandler(`.reset-button`, "show");
   classHandler(`.settings-input`, "show");
   classHandler(`.search-button`, "hide");
   classHandler(`.settings-button`, "hide");
@@ -172,6 +174,7 @@ function settingsModeExit() {
   dbSet("settingsMode", "no");
   classHandler(`.confirm-button`, "hide");
   classHandler(`.cancel-button`, "hide");
+  classHandler(`.reset-button`, "hide");
   classHandler(`.settings-input`, "hide");
   classHandler(`.search-button`, "show");
   classHandler(`.settings-button`, "show");
@@ -325,8 +328,6 @@ classHandler(".button-list").addEventListener("mouseleave", (event) => {
   }
 });
 
-
-
 // Enter settings mode when the settings button is clicked
 classHandler(`.settings-button`).addEventListener("click", (event) => {
   settingsModeEnter();
@@ -337,7 +338,16 @@ classHandler(`.cancel-button`).addEventListener("click", (event) => {
   settingsModeExit();
 });
 
-// Confirm settings and set background image path
+classHandler(`.reset-button`).addEventListener("click", (event) => {
+  // Reset to default settings
+  dbSet("imagePath", "");
+  dbSet("imageNameList", "");
+  // Set a new random background image
+  randomBackgroundImageSet();
+  settingsModeExit();
+});
+
+// Confirm settings and set background image path by user input
 classHandler(`.confirm-button`).addEventListener("click", (event) => {
   let imagePath = classHandler(`.settings-input`).value;
   imagePath = imagePath.trim();
