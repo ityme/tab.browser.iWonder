@@ -213,7 +213,6 @@ body {
 
 /* --- Button List --- */
 .button-list {
-  width: 92px;
   flex-direction: row-reverse; /* Buttons appear from the right */
 }
 
