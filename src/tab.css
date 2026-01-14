@@ -17,7 +17,7 @@
 
 body {
   /* Default background color when the image is not available */
-  background-color: rgba(21, 58, 91, 0.635);
+  background-color: rgba(107, 107, 107, 0.65);
   /* Dynamic background image is set via JavaScript */
   /* Cover the entire screen */
   background-size: cover;
@@ -213,7 +213,6 @@ body {
 
 /* --- Button List --- */
 .button-list {
-  width: 92px;
   flex-direction: row-reverse; /* Buttons appear from the right */
 }
 
