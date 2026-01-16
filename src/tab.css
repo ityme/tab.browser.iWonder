@@ -5,6 +5,14 @@
  * @date 2025-09-01
  */
 
+:root {
+  /* search container height */
+  --height-1: 48px;
+
+  /* xxx-container & xxx-list &  xxx-item  : == --height-1 - 2 * border */
+  --height-2: 46px;
+}
+
 /* --- Global Resets and Base Styles --- */
 * {
   margin: 0;
@@ -44,8 +52,8 @@ body {
   /* gap: 10px; */
   width: 48vw;
   min-width: 350px;
-  height: 48px;
-  border-radius: 24px;
+  height: var(--height-1);
+  border-radius: calc(var(--height-1) / 2);
   /* Glassmorphism effect: semi-transparent background */
   background-color: rgba(255, 255, 255, 0.25);
   /* Blur effect for the background */
@@ -63,44 +71,44 @@ body {
 /* #region  Width and Height Management */
 /* All direct children of the search container take full height */
 .search-container > * {
-  height: 100%;
+  height: var(--height-2);
 }
 
 .engine-container > * {
-  height: 100%;
+  height: var(--height-2);
 }
 
 .input-container > input {
   width: 100%;
-  height: 100%;
+  height: var(--height-2);
 }
 
 .shortcut-container > * {
-  height: 50%;
+  height: calc(var(--height-2) / 2);
 }
 
 .button-container > * {
-  height: 100%;
+  height: var(--height-2);
 }
 
 /* Equivalent to .engine-container > .engine-list > .engine-item */
 .engine-item {
-  height: 100%;
+  height: var(--height-2);
 }
 
 /* Equivalent to .shortcut-container > .shortcut-list > .shortcut-item */
 .shortcut-item {
-  height: 100%;
+  height: calc(var(--height-2) / 2);
 }
 
 /* Equivalent to .button-container > .button-list > .button-item */
 .button-item {
-  height: 100%;
+  height: var(--height-2);
 }
 
 .engine-item > svg,
 .button-item > svg {
-  height: 50%;
+  height: calc(var(--height-2) / 2);
 }
 /* #endregion */
 
@@ -150,7 +158,9 @@ body {
   display: flex;
   align-items: center;
   cursor: auto;
-  border-radius: 24px;
+  height: var(--height-2);
+  border-radius: calc(var(--height-2) / 2);
+
   /* Add transition for smooth background/gap change */
   transition: all 0.3s ease-in-out;
 }
@@ -165,7 +175,8 @@ body {
 
 /* --- Individual Items --- */
 .engine-item {
-  aspect-ratio: 1; /* Maintain a square shape */
+  height: var(--height-2);
+  width: var(--height-2); /* Maintain a square shape */
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -213,6 +224,7 @@ body {
 
 /* --- Button List --- */
 .button-list {
+  min-width: calc(var(--height-2) * 2);
   flex-direction: row-reverse; /* Buttons appear from the right */
 }
 
