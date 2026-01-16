@@ -276,3 +276,33 @@ body {
     visibility: visible;
   }
 }
+
+/* --- ICP Footer --- */
+.icp-footer {
+  position: fixed;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icp-footer a {
+  color: #888;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.icp-footer a:hover {
+  color: #555;
+}
+
+.icp-footer img {
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+}
