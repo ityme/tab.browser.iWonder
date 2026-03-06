@@ -12,17 +12,17 @@ const DEFAULT_CONFIG = {
   isSearchContainerVisible: "yes", // 'yes' if the search container is visible, 'no' otherwise
   imagePath: "./static/image/", // Path to the background image folder
   imageNameList: [
-    "Girl in the forest-without-sign.png",
-    "三体智子高清4k动漫壁纸_彼岸图网.jpg",
-    "动漫女孩 侧脸 光 4k壁纸_彼岸图网.jpg",
-    "地下城与勇士 女孩 小提琴 公园 汽车4k动漫壁纸_彼岸图网.jpg",
-    "小兰 动漫人物 4k壁纸 3840_2160_彼岸图网.jpg",
-    "小兰 落泪 伤心难过 4K动漫壁纸_彼岸图网.jpg",
-    "帅气短发美少女 汽车 动漫风景 3440x1440带鱼屏壁纸_彼岸图网.jpg",
-    "敦煌风美女 绘画 唯美 高清4k动漫壁纸_彼岸图网.jpg",
-    "短发女孩 蓝玫瑰 4K动漫壁纸 3840x2160_彼岸图网.jpg",
-    "艾瑞丝盖恩斯巴勒 最终幻想美女4k壁纸_彼岸图网.jpg",
-    "黑白风动漫人物女4k壁纸3840x2160_彼岸图网.jpg",
+    "Girl in the forest-without-sign.jpg",
+    "三体智子高清-2k.jpg",
+    "动漫女孩 侧脸 光-2k.jpg",
+    "地下城与勇士 女孩 小提琴 公园 汽车-2k.jpg",
+    "小兰 动漫人物-2k.jpg",
+    "小兰 落泪 伤心难过-2k.jpg",
+    "帅气短发美少女 汽车 动漫风景-2k.jpg",
+    "敦煌风美女 绘画 唯美 高清-2k.jpg",
+    "短发女孩 蓝玫瑰-2k.jpg",
+    "艾瑞丝盖恩斯巴勒 最终幻想美女-2k.jpg",
+    "黑白风动漫人物女-2k.jpg",
   ], // List of image file names in the background image folder
 };
 
