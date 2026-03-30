@@ -29,6 +29,8 @@ body {
   /* Dynamic background image is set via JavaScript */
   /* Cover the entire screen */
   background-size: cover;
+  /* When zooming in and out of the page, the image automatically centers */
+  background-position: center;
   /* Prevent the background image from repeating */
   background-repeat: no-repeat;
   /* Fix the background image during scroll */
